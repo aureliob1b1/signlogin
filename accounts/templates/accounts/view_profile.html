@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+    <title>Profile</title>
+    {% endblock %}
+
+    {% block body %}
+    {% if messages %}
+
+    {% for message in messages %}
+      <div class="container">
+      <div class="" role="alert">
+      <center>
+        {{ message }}
+      </center>
+    </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Profile of {{ user }}</h1>
+      <p>Username: {{ user }}</p>
+      <p>First Name: {{ user.first_name }}</p>
+      <p>Last Name: {{ user.last_name }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Last login: {{ user.last_login }}</p>
+      <p>Description: {{ user.userprofile.description }}</p>
+      <p>City: {{ user.userprofile.city }}</p>
+      <p>Website: {{ user.userprofile.website }}</p>
+      <p>Phone: {{ user.userprofile.phone }}</p>
+    </div>
+
+      {% if user.userprofile.image %}
+      <div class="col-md-6">
+        <img src="{{ user.userprofile.image.url }}" width="420">
+      </div>
+      {% endif %}
+
+<!--
+
+</div>
+    <br>
+    <div class="container">
+      <a class="btn btn-warning" href="/account/profile/edit" role="button">EDIT PROFILE &raquo;</a>
+    </div> -->
+</div>
+</div>
+    {% endblock %}

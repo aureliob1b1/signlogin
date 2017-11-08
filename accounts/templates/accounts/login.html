@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'accounts/style.css' %}" type="text/css">
+<div class="container">
+<h1>Welcome</h1>
+<h2> You can login here !</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+</div>
+<br>
+
+
+
+{% endblock %}
+
+<!--{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'accounts/style.css' %}" type="text/css">
+  </head>
+  <body class="text-white">
+      <div class="jumbotron jumbotron-fluid bg-primary">
+      <div class="container">
+    <h1>Welcome to the BookFace of the European School of Alicante!</h1>
+      </div>
+    </div>
+    <div class="container">
+    You can login here !
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+    <button type="button" class="btn btn-outline-info">Info</button>
+    <button type="button" class="btn btn-outline-light">Light</button>
+    <button type="button" class="btn btn-outline-dark">Dark</button>
+  </div>
+  <h1>Hello {{ myName }}</h1>
+  <ul>
+    {% for number in numbers %}
+    <li>{{ number }}</li>
+    {% endfor %}
+  </ul>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
